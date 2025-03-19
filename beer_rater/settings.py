@@ -25,7 +25,7 @@ SECRET_KEY = '1p#d6pqh=tf2=^f&*b^tb$&s52os5_g&aoe&%9-zh1*_m6*rep'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['beer_rater.onrender.com', '127.0.0.1']
+ALLOWED_HOSTS = ['micheles-web.onrender.com', 'beer_rater.onrender.com', '127.0.0.1']
 
 
 
