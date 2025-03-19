@@ -13,17 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import path, re_path
 from django.contrib import admin
 
 from ratings.views import home, RatingCreate, delete, edit, add_new, add
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', RatingCreate.as_view(), name='rating-home'),
-    url(r'rating/add/$', RatingCreate.as_view(), name='rating-add'),
-    url(r'rating/delete/(?P<row_id>[0-9]+)/$', delete , name='rating-delete'),
-    url(r'rating/edit/(?P<row_id>[0-9]+)/$', edit , name='rating-edit'),
-    url(r'^ajax/add/$', add_new , name='add-new'),
-    url(r'^add/$', add , name='add'),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^$', RatingCreate.as_view(), name='rating-home'),
+    re_path(r'rating/add/$', RatingCreate.as_view(), name='rating-add'),
+    re_path(r'rating/delete/(?P<row_id>[0-9]+)/$', delete , name='rating-delete'),
+    re_path(r'rating/edit/(?P<row_id>[0-9]+)/$', edit , name='rating-edit'),
+    re_path(r'^ajax/add/$', add_new , name='add-new'),
+    re_path(r'^add/$', add , name='add'),
 ]
