@@ -15,6 +15,11 @@ def home(request):
     """
     context = {'ratings': Rating.objects.all()}
     return render(request, 'home.html', context)
+    
+def delete_rating(request, row_id):
+    rating = get_object_or_404(Rating, id=row_id)
+    rating.delete()
+    return redirect('ratings-home')
 
 def delete(request, row_id):
     rating = get_object_or_404(Rating, pk=row_id)
@@ -22,7 +27,9 @@ def delete(request, row_id):
     context = {'ratings': Rating.objects.all()}
     return redirect('rating-home')
 
-
+def edit_rating(request, row_id):
+    rating = get_object_or_404(Rating, id=row_id)
+    return render(request, 'ratings/edit.html', {'rating': rating})
 
 def edit(request, row_id):
     rating = get_object_or_404(Rating, pk=row_id)

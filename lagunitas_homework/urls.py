@@ -13,12 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from django.contrib import admin
 
 from ratings.views import home, RatingCreate, delete, edit, add_new, add
 
 urlpatterns = [
+    path('', include('homepage.urls')),  # This links the homepage app
+    path('beer_rater/', include('ratings.urls')),  # Your existing app
+    path('admin/', admin.site.urls),  # Admin panel
+    
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^$', RatingCreate.as_view(), name='rating-home'),
     re_path(r'rating/add/$', RatingCreate.as_view(), name='rating-add'),
