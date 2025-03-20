@@ -1,12 +1,11 @@
-
-
 div.jumbotron {
-    background-color: #e5d7b0;
-    text-align: center;
+  background-color: #e5d7b0;
+  text-align: center;
 }
 
 body {
   background-color: #995a24;
+  cursor: url(lemon2.png), help;
 }
 
 div.body {
@@ -23,9 +22,9 @@ h1 {
   color: red;
   margin-top: 120px;
   text-shadow:
-   -1px -1px 0 #e8c31e,
+    -1px -1px 0 #e8c31e,
     1px -1px 0 #e8c31e,
-   -1px 1px 0 #e8c31e,
+    -1px 1px 0 #e8c31e,
     1px 1px 0 #e8c31e;
 }
 
@@ -39,7 +38,8 @@ label {
   vertical-align: top;
 }
 
-textarea, input {
+textarea,
+input {
   border: 2px solid pink;
   border-radius: 7px;
   padding: 10px;
