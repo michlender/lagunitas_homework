@@ -66,7 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ratings.urls'
+ROOT_URLCONF = 'lagunitas_homework.urls'
 
 TEMPLATES = [
     {

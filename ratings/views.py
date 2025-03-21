@@ -7,19 +7,21 @@ from ratings.forms import RatingForm
 
 
 
-
 def home(request):
-    """ Show the entry point to the ratings app
-    :param request: Django request object
-    :return: rendered homepage
-    """
-    context = {'ratings': Rating.objects.all()}
-    return render(request, 'home.html', context)
-    
+    ratings = Rating.objects.all()  #  Load all ratings
+    return render(request, 'ratings/home.html', {'ratings': ratings})
+#def home(request):
+#    """ Show the entry point to the ratings app
+#    :param request: Django request object
+#    :return: rendered homepage
+#    """
+#    context = {'ratings': Rating.objects.all()}
+#    return render(request, 'home.html', context)
+#    
 def delete_rating(request, row_id):
     rating = get_object_or_404(Rating, id=row_id)
     rating.delete()
-    return redirect('ratings-home')
+    return redirect('rating-home')
 
 def delete(request, row_id):
     rating = get_object_or_404(Rating, pk=row_id)
@@ -29,7 +31,15 @@ def delete(request, row_id):
 
 def edit_rating(request, row_id):
     rating = get_object_or_404(Rating, id=row_id)
-    return render(request, 'ratings/edit.html', {'rating': rating})
+    form = RatingForm(instance=rating)  # Pre-fill form with data
+
+    if request.method == "POST":
+        form = RatingForm(request.POST, instance=rating)
+        if form.is_valid():
+            form.save()
+            return redirect('rating-home')  # Ensure this matches `urls.py`
+
+    return render(request, 'ratings/edit.html', {'form': form})
 
 def edit(request, row_id):
     rating = get_object_or_404(Rating, pk=row_id)
@@ -100,3 +110,15 @@ class RatingCreate(View):
             _ = form.save()
             return redirect('rating-home')
         return render(request, self.template_name, {'form: form'})
+        
+def add_rating(request):
+    if request.method == "POST":
+        form = RatingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('rating-home')  # ✅ Redirect back to home
+
+    else:
+        form = RatingForm()
+
+    return render(request, 'ratings/add.html', {'form': form})

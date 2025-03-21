@@ -13,21 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import path, re_path, include
+from django.urls import path, include, re_path
 from django.contrib import admin
-
-from ratings.views import home, RatingCreate, delete, edit, add_new, add
+from ratings.views import RatingCreate, delete, edit, add_new, add
 
 urlpatterns = [
-    path('', include('homepage.urls')),  # This links the homepage app
-    path('beer_rater/', include('ratings.urls')),  # Your existing app
-    path('admin/', admin.site.urls),  # Admin panel
+    path('admin/', admin.site.urls),  # Keep only one admin path
+    path('', include('homepage.urls')),  # Set homepage as root
+    path('beer_rater/', include('ratings.urls')),  # App link
     
-    re_path(r'^admin/', admin.site.urls),
-    re_path(r'^$', RatingCreate.as_view(), name='rating-home'),
-    re_path(r'rating/add/$', RatingCreate.as_view(), name='rating-add'),
-    re_path(r'rating/delete/(?P<row_id>[0-9]+)/$', delete , name='rating-delete'),
-    re_path(r'rating/edit/(?P<row_id>[0-9]+)/$', edit , name='rating-edit'),
-    re_path(r'^ajax/add/$', add_new , name='add-new'),
-    re_path(r'^add/$', add , name='add'),
+    # Ratings-related paths
+    path('ratings/add/', RatingCreate.as_view(), name='rating-add'),
+    path('ratings/delete/<int:row_id>/', delete, name='rating-delete'),
+    path('ratings/edit/<int:row_id>/', edit, name='rating-edit'),
+    path('ajax/add/', add_new, name='add-new'),
+    path('add/', add, name='add'),
 ]
