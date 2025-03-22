@@ -97,7 +97,7 @@ def add(request):
 class RatingCreate(View):
     """ Create a new Rating """
     form_class = RatingForm
-    template_name = 'home.html'
+    template_name = 'ratings/home.html'
 
     def get(self, request):
         form = self.form_class()

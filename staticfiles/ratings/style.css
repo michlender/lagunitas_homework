@@ -8,6 +8,23 @@ body {
   cursor: url(lemon2.png), help;
 }
 
+table.table {
+  background-color: #995a24;
+  color: #995a24;
+  cursor: url(lemon2.png), help;
+}
+
+table.th {
+  background-color: #995a24;
+
+}
+
+table.td {
+  background-color: #995a24;
+
+}
+
+
 div.body {
   margin-left: 40px;
   margin-right: 40px;
