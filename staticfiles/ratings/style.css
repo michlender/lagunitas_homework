@@ -10,19 +10,20 @@ body {
 
 table.table {
   background-color: #995a24;
-  color: #995a24;
+  color: white;
+  border-collapse: collapse;
   cursor: url(lemon2.png), help;
 }
 
-table.th {
+table.table th,
+table.table td {
   background-color: #995a24;
-
+  color: white;
+  border: 1px solid #fff;
+  padding: 8px;
 }
 
-table.td {
-  background-color: #995a24;
 
-}
 
 
 div.body {
@@ -130,4 +131,13 @@ div.footer {
   background-image: url(lag_ipa.png);
   background-repeat: repeat-x;
   background-size: 70px;
+}
+
+
+
+.hidden1 button:hover {
+  cursor: url("{% static 'ratings/lag_splat.png' %}"),
+  auto;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.05);
 }

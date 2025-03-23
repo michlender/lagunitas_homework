@@ -1,18 +1,20 @@
 {% load static %}
-
 <html>
 
 <head>
   <title>{% block title %}Beer Rater{% endblock %}</title>
+
   <link href="https://fonts.googleapis.com/css?family=Gugi|Ubuntu|Kavivanar|Lobster|Pacifico" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link href="{% static ' bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static ' ratings/style.css' %}" rel="stylesheet">
-  <link rel="shortcut icon" type="image/png" href="{% static 'lag_splat_big.png' %}" />
 
+  <!-- Move ALL stylesheet loading into the block -->
   {% block css %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
   {% endblock %}
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'lag_splat_big.png' %}" />
 </head>
+
 
 <body>
   <div class="jumbotron jumbotron-fluid">
