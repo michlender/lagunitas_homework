@@ -56,7 +56,7 @@ def edit(request, row_id):
         form = RatingForm(instance=rating)
         return render(
             request,
-            'ratings/entry_def.html',
+            'ratings/edit.html',
              context
         )
 

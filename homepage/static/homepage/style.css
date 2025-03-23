@@ -1,6 +1,13 @@
 div.jumbotron {
   background-color: #e5d7b0;
   text-align: center;
+  border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* allow wrapping on smaller screens */
+  gap: 1rem;
 }
 
 body {
@@ -21,8 +28,8 @@ h1 {
   font-family: 'Lobster';
   padding: 0 80px;
   display: inline;
-  font-size: 12vw;
-  color: red;
+  font-size: 12px;
+  color: rgb(72, 67, 67);
   margin-top: 120px;
   text-shadow:
     -1px -1px 0 #e8c31e,
