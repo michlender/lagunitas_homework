@@ -30,20 +30,39 @@
  }
 
  table.table {
-   background-color: #995a24;
-   /* color: rgb(78, 74, 74); */
+   width: 100%;
    border-collapse: collapse;
-   cursor: url(lemon2.png), help;
-
+   background: linear-gradient(135deg,
+       #8b5a2b 0%,
+       #a0522d 25%,
+       #cd853f 50%,
+       #a0522d 75%,
+       #8b5a2b 100%);
+   background-size: 100% 200px;
+   color: #fefefe;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+   font-family: 'Ubuntu', sans-serif;
  }
 
- table.table td,
- table.table th {
-   background-color: #995a24;
-   color: white;
-   /* optional, makes text easier to read on brown */
+ table.table th,
+ table.table td {
+   padding: 16px;
+   background-color: rgba(153, 90, 36, 0.85);
+   /* semi-transparent overlay */
    border: 1px solid #fff;
-   /* optional border for visibility */
+   text-align: left;
+ }
+
+ table.table th {
+   font-size: 20px;
+   font-weight: bold;
+   color: #fff8dc;
+   text-shadow: 1px 1px 2px #000;
+ }
+
+ table.table tr:nth-child(even) td {
+   background-color: rgba(120, 60, 20, 0.8);
+   /* alternating wood grain effect */
  }
 
 
