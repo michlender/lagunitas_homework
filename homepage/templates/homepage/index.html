@@ -8,26 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'PurpleMagic';
+            src: url("{% static 'homepage/fonts/PurplemagicdemoSvg-x32mO.otf' %}") format('opentype');
+        }
+
+        @font-face {
+            font-family: 'SuperShiny';
+            src: url("{% static 'homepage/fonts/SuperShiny-0v0rG.ttf' %}") format('truetype');
+        }
+
+        body {
+            cursor: url("{% static 'homepage/dagger.png' %}") 16 16,
+            auto;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 class="display-3">Welcome to My Portfolio</h1>
-        <p class="lead">Explore my projects:</p>
+        <h1 style="font-family: 'PurpleMagic', sans-serif; font-size: 100px;" class="display-3">Welcome to My Portfolio
+        </h1>
+        <p style="font-family: 'SuperShiny', sans-serif; font-size: 50px; color: pink;" class="lead">Click on an image
+            to explore my
+            projects:</p>
 
         <div class="mt-4">
-            <a href="{% url 'rating-home' %}" class="btn btn-primary btn-lg">🍻 Beer Rater App</a>
-            <a href="{% static 'homepage/MicheleCollenderResume.pdf' %}" target="_blank"
-                class="btn btn-primary btn-lg">View
-                My Resume</a>
+            <a href="{% static 'homepage/MicheleCollenderResume.pdf' %}">
+                <img src="{% static 'homepage/heart.png' %}" alt="Grocery App Button"> </a>
+            <a href="{% url 'rating-home' %}">
+                <img src="{% static 'homepage/lag_ipa.png' %}" alt="Ratings App Button"></a>
+
 
 
         </div>
 
-        <footer class="mt-5">
-            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        <footer class="mt-5">All 8bit art hand drawn by me
         </footer>
     </div>
 </body>

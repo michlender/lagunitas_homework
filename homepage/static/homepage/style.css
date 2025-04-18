@@ -1,3 +1,10 @@
+{% load static %}
+
+@font-face {
+  font-family: 'PurpleMagic';
+  src: url("{% static 'homepage/fonts/PurplemagicdemoSvg-x32mO.otf' %}") format('opentype');
+}
+
 div.jumbotron {
   background-color: #e5d7b0;
   text-align: center;
@@ -10,12 +17,14 @@ div.jumbotron {
   gap: 1rem;
 }
 
+
+
 body {
   font-family: 'Gugi', sans-serif;
   background: linear-gradient(to right, #ff7e5f, #feb47b);
   color: white;
   text-align: center;
-  cursor: url(lemon2.png), help;
+  cursor: url("static/homepage/dagger.png"), help;
 }
 
 div.body {
@@ -25,7 +34,7 @@ div.body {
 }
 
 h1 {
-  font-family: 'Lobster';
+  font-family: 'PurpleMagic';
   padding: 0 80px;
   display: inline;
   font-size: 12px;
