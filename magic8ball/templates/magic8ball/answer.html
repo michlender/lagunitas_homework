@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Your Magic 8-Ball Answer</title>
+</head>
+
+<body>
+    <h1>Your Question:</h1>
+    <p>{{ question }}</p>
+
+    <h1>Magic 8-Ball Says:</h1>
+    <p><strong>{{ answer }}</strong></p>
+
+    <a href="{% url 'ask_question' %}">Ask another question</a>
+</body>
+
+</html>

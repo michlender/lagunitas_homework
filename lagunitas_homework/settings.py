@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ratings',
     'homepage',
+    'magic8ball',
 ]
 
 MIDDLEWARE = [
