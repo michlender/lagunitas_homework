@@ -19,7 +19,7 @@ from ratings.views import RatingCreate, delete, edit, add_new, add
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Keep only one admin path
-    path('', include('homepage.urls')),  # Set homepage as root
+    path('', include('homepage.urls'), name='homepage'),  # Set homepage as root
     path('ratings/', include('ratings.urls')),  # App link
     
     # Ratings-related paths

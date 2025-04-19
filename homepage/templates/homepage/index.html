@@ -4,6 +4,7 @@
 <html lang="en">
 
 <head>
+    <!-- <link rel="icon" type="image/png" href="{% static 'homepage/flameheart.png' %}"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
@@ -26,6 +27,7 @@
             auto;
         }
     </style>
+
 </head>
 
 <body>
@@ -37,9 +39,9 @@
             projects:</p>
 
         <div class="mt-4">
-            <a href="{% static 'homepage/MicheleCollenderResume.pdf' %}">
+            <a href="{% static 'homepage/MicheleCollenderResume.pdf' %}" class="heart">
                 <img src="{% static 'homepage/heart.png' %}" alt="Grocery App Button"> </a>
-            <a href="{% url 'rating-home' %}">
+            <a href="{% url 'rating-home' %}" class="beer">
                 <img src="{% static 'homepage/lag_ipa.png' %}" alt="Ratings App Button"></a>
 
 
