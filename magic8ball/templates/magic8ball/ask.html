@@ -1,17 +1,23 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="stylesheet" href="{% static 'magic8ball/style.css' %}">
     <title>Magic 8-Ball</title>
+
 </head>
 
 <body>
     <h1>Ask the Magic 8-Ball</h1>
 
-    <form action="{% url 'show_answer' %}" method="get">
+    <form action=" {% url 'show_answer' %}" method="get">
         <input type="text" name="question" placeholder="Type your question..." required>
-        <button type="submit">Ask!</button>
+        <br><br>
+        <div class="ask-button">
+            <input type="image" src="{% static 'magic8ball/8ball.png' %}" alt="Ask!">
+        </div>
     </form>
 </body>
 

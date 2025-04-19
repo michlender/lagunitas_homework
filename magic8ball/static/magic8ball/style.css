@@ -1,0 +1,48 @@
+body {
+    background-color: #2ffc7e;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
+    min-height: 100vh;
+    /* Make body take full height */
+    margin: 0;
+    /* Remove default browser margins */
+    text-align: center;
+    /* Center text inside elements */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 300px;
+    max-width: 80%;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+input[type="image"] {
+    width: 150px;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+input[type="image"]:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+input[type="image"]:active {
+    transform: scale(0.95);
+}
