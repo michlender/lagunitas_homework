@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Candy Land!</title>
+	<link rel="stylesheet" href="{% static 'candyland/style.css' %}">
+</head>
+
+<body>
+	<h1>🎲 Candy Land Board 🎲</h1>
+
+	<div class="board">
+		{% for square in board_squares %}
+		<div class="square {% if square == player_position %} player {% endif %}">
+			{% if square == player_position %}
+				🍬
+			{% else %}
+				{{ square }}
+			{% endif %}
+		</div>
+		{% endfor %}
+	</div>
+
+	<br>
+	<form action="{% url 'move' %}" method="post">
+		{% csrf_token %}
+		<button type="submit">Move!</button>
+	</form>
+
+</body>
+</html>

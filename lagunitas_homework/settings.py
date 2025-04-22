@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ratings',
     'homepage',
     'magic8ball',
+    'candyland',
 ]
 
 MIDDLEWARE = [

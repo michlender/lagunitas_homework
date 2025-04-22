@@ -115,9 +115,9 @@ input {
   background-color: pink;
 }
 
-.beer:hover {
+/*.beer:hover {
   cursor: url("lemon2.png"), help;
-}
+}*/
 
 th {
   font-size: 18px;
