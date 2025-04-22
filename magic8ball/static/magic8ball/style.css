@@ -16,6 +16,15 @@ body {
     /* Center text inside elements */
 }
 
+.corner-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    /* or however big you want it */
+    height: auto;
+}
+
 form {
     display: flex;
     flex-direction: column;

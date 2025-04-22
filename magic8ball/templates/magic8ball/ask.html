@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <a href="{% url 'home' %}" class="corner-logo"><img src="{% static 'magic8ball/1ball.png' %}"
+            alt="Magic 8-Ball Logo" class="corner-logo"></a>
+
     <h1>Ask the Magic 8-Ball</h1>
 
     <form action=" {% url 'show_answer' %}" method="get">
